@@ -1,12 +1,49 @@
-#include <gst.h>
-#include <rtsp/rtsp.h>
-#include <rtsp-server/rtsp-client.h>
-#include <rtsp-server/rtsp-server.h>
+#include <gst/rtsp-server/rtsp-server.h>
 #include <string>
 #include <iostream>
+#include <vector>
+
+#include <ws2tcpip.h>
+#include <winsock2.h>
+#include <iphlpapi.h>
+#pragma comment(lib, "iphlpapi.lib")
+#pragma comment(lib, "ws2_32.lib")
 
 
 // #define nob_shift(xs, xs_sz) (NOB_ASSERT((xs_sz) > 0), (xs_sz)--, *(xs)++)
+bool detectar_ips_redes_privadas(std::string &ip1, std::string &ip2) {
+    ULONG bufferSize = 15000;
+    std::vector<char> buffer(bufferSize);
+    IP_ADAPTER_ADDRESSES* adapters = reinterpret_cast<IP_ADAPTER_ADDRESSES*>(buffer.data());
+
+    if (GetAdaptersAddresses(AF_INET, GAA_FLAG_SKIP_ANYCAST | GAA_FLAG_SKIP_MULTICAST | GAA_FLAG_SKIP_DNS_SERVER, NULL, adapters, &bufferSize) != NO_ERROR) {
+        return false;
+    }
+
+    std::vector<std::string> ips_detectadas;
+    for (IP_ADAPTER_ADDRESSES* adapter = adapters; adapter; adapter = adapter->Next) {
+        if (adapter->OperStatus != IfOperStatusUp)
+            continue;
+
+        for (IP_ADAPTER_UNICAST_ADDRESS* address = adapter->FirstUnicastAddress; address; address = address->Next) {
+            SOCKADDR_IN* sa_in = reinterpret_cast<SOCKADDR_IN*>(address->Address.lpSockaddr);
+            char strbuf[INET_ADDRSTRLEN];
+            inet_ntop(AF_INET, &(sa_in->sin_addr), strbuf, INET_ADDRSTRLEN);
+            std::string ip = strbuf;
+            if (ip.rfind("192.168.", 0) == 0) {
+                ips_detectadas.push_back(ip);
+            }
+        }
+    }
+
+    if (ips_detectadas.size() >= 2) {
+        ip1 = ips_detectadas[0];
+        ip2 = ips_detectadas[1];
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // Callback para imprimir errores del pipeline
 static void on_media_configure(GstRTSPMediaFactory *factory, GstRTSPMedia *media, gpointer user_data) {
@@ -27,7 +64,7 @@ static void on_media_configure(GstRTSPMediaFactory *factory, GstRTSPMedia *media
     gst_object_unref(element);
 }
 
-// Función para crear un servidor RTSP en una IP concreta
+// Funcion para crear un servidor RTSP en una IP concreta
 GstRTSPServer* crear_servidor(const std::string& ip, const std::string& pipeline) {
     auto *server = gst_rtsp_server_new();
     gst_rtsp_server_set_address(server, ip.c_str());
@@ -53,19 +90,56 @@ GstRTSPServer* crear_servidor(const std::string& ip, const std::string& pipeline
 
 int main(int argc, char **argv) {
     gst_init(&argc, &argv);
+
     std::string cam_url = "rtsp://admin:admin123@192.168.0.10:554/live0.265";
-    std::string ip_eth0 = "192.168.0.15";
-    std::string ip_eth1 = "192.168.1.215";
+    // std::string ip_eth0 = "192.168.0.15";
+    // std::string ip_eth1 = "192.168.1.15";
 
-    if(argc < 4){
-        printf("Usage:\n\t <ip-camera> <ip-interfaz-1> <ip-interfaz-2> \n");
-        return 0;
-    }else{
-        cam_url = std::string(argv[1]);
-        ip_eth0 = std::string(argv[2]);
-        ip_eth1 = std::string(argv[3]);
+    // if(argc < 4 && argc > 1){
+    //     printf("Usage:\n\t <ip-camera> <ip-interfaz-1> <ip-interfaz-2> \n");
+    //     return -1;
+    // }else if (argc == 4){
+    //     cam_url = std::string(argv[1]);
+    //     ip_eth0 = std::string(argv[2]);
+    //     ip_eth1 = std::string(argv[3]);
+    // }else{ // lanzar .exe
+    //     printf("Introduzca la direccion de entrada RTSP (rtsp://admin:admin123@192.168.0.10:554/live0.265): \nSi se introduce \"def\" se cogera la .1.15, .0.15 y rtsp://admin:admin123@192.168.0.10:554/live0.265\n\t->Path: ");
+    //     std::cin >> cam_url;
+    //     if(cam_url.starts_with("def")){
+    //         cam_url = "rtsp://admin:admin123@192.168.0.10:554/live0.265";
+    //         ip_eth0 = "192.168.0.20";
+    //         ip_eth1 = "192.168.1.122";
+    //         goto ok;
+    //     }
+    //     while(!cam_url.starts_with("rtsp://")){
+    //         std::cout << "\x1B[2J\x1B[H";
+    //         printf("Error en el formato, introduce una direccion valida\n\t ->path: ");
+    //         std::cin >> cam_url;
+    //     }
+
+    //     printf("Introduzca la direccion IP en la red A\n\t ->IP:  ");
+    //     std::cin >> ip_eth0;
+    //     while(!ip_eth0.starts_with("192.168.")){
+    //         std::cout << "\x1B[2J\x1B[H";
+    //         printf("Error en el formato, introduce una IP valida\n\t ->IP: ");
+    //         std::cin >> ip_eth0;
+    //     }
+        
+    //     printf("Introduzca la direccion IP en la red B\n\t ->IP:  ");
+    //     std::cin >> ip_eth1;
+    //     while(!ip_eth1.starts_with("192.168.")){
+    //         std::cout << "\x1B[2J\x1B[H";
+    //         printf("Error en el formato, introduce una IP valida\n\t ->IP: ");
+    //         std::cin >> ip_eth1;
+    //     }
+        
+    // }
+    // ok:
+    std::string ip_eth0, ip_eth1;
+    if (!detectar_ips_redes_privadas(ip_eth0, ip_eth1)) {
+        std::cerr << "No se pudieron detectar al menos dos interfaces activas en redes 192.168.x.x\n";
+        return -1;
     }
-
     std::string pipeline =
         "rtspsrc location=" + cam_url + " latency=100 ! "
         "rtph265depay ! h265parse ! rtph265pay name=pay0 pt=96";
@@ -80,9 +154,12 @@ int main(int argc, char **argv) {
     }
 
       // debug solo
-    std::cout << "Servidor RTSP activo en ambas redes:\n";
-    std::cout << "rtsp://" << ip_eth0 << ":8554/stream\n";
-    std::cout << "rtsp://" << ip_eth1 << ":8554/stream\n";
+    std::cout << "\x1B[2J\x1B[H";
+    std::cout << "[Servidor] RTSP activo en ambas redes:\n";
+    std::cout << "\trtsp://" << ip_eth0 << ":8554/stream\n";
+    std::cout << "\trtsp://" << ip_eth1 << ":8554/stream\n";
+    std::cout << "[Servidor] capturando stream de video desde: \n\t";
+    std::cout << cam_url;
     GMainLoop *loop = g_main_loop_new(nullptr, FALSE);
     g_main_loop_run(loop);
     return 0;

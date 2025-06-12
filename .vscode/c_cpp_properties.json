@@ -4,10 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/GStreamer/1.0/msvc_x86_64",
-                "C:/GStreamer/1.0/msvc_x86_64/include/",
-                "C:/GStreamer/1.0/msvc_x86_64/include/gstreamer-1.0/gst/"
-
+                "C:/GStreamer/1.0/msvc_x86_64/include/gstreamer-1.0",
+                "C:/GStreamer/1.0/msvc_x86_64/include/glib-2.0",
+                "C:/GStreamer/1.0/msvc_x86_64/lib/glib-2.0/include"
             ],
             "defines": [
                 "UNICODE",

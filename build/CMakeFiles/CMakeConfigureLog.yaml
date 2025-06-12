@@ -24,7 +24,7 @@ events:
       The output was:
       0
       Versi├│n de MSBuild 17.14.10+8b8e13593 para .NET Framework
-      Compilaci├│n iniciada a las 12/06/2025 10:16:49.
+      Compilaci├│n iniciada a las 12/06/2025 15:01:51.
       
       Proyecto "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" en nodo 1 (destinos predeterminados).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 Advertencia(s)
           0 Errores
       
-      Tiempo transcurrido 00:00:00.76
+      Tiempo transcurrido 00:00:00.48
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -79,7 +79,7 @@ events:
       The output was:
       0
       Versi├│n de MSBuild 17.14.10+8b8e13593 para .NET Framework
-      Compilaci├│n iniciada a las 12/06/2025 10:16:51.
+      Compilaci├│n iniciada a las 12/06/2025 15:01:52.
       
       Proyecto "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" en nodo 1 (destinos predeterminados).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           0 Advertencia(s)
           0 Errores
       
-      Tiempo transcurrido 00:00:00.50
+      Tiempo transcurrido 00:00:00.47
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-drypoh"
-      binary: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-drypoh"
+      source: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-7bmcim"
+      binary: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-7bmcim"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -137,40 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-drypoh'
+        Change Dir: 'C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-7bmcim'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d8cdc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f107a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.10+8b8e13593 para .NET Framework
-        Compilaci├│n iniciada a las 12/06/2025 10:16:53.
+        Compilaci├│n iniciada a las 12/06/2025 15:01:52.
         
-        Proyecto "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-drypoh\\cmTC_d8cdc.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7bmcim\\cmTC_f107a.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
-          Creando directorio "cmTC_d8cdc.dir\\Debug\\".
+          Creando directorio "cmTC_f107a.dir\\Debug\\".
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-drypoh\\Debug\\".
-          Creando directorio "cmTC_d8cdc.dir\\Debug\\cmTC_d8cdc.tlog\\".
+          Creando directorio "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7bmcim\\Debug\\".
+          Creando directorio "cmTC_f107a.dir\\Debug\\cmTC_f107a.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_d8cdc.dir\\Debug\\cmTC_d8cdc.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_d8cdc.dir\\Debug\\cmTC_d8cdc.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_f107a.dir\\Debug\\cmTC_f107a.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_f107a.dir\\Debug\\cmTC_f107a.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d8cdc.dir\\Debug\\\\" /Fd"cmTC_d8cdc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f107a.dir\\Debug\\\\" /Fd"cmTC_f107a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35208 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d8cdc.dir\\Debug\\\\" /Fd"cmTC_d8cdc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f107a.dir\\Debug\\\\" /Fd"cmTC_f107a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-drypoh\\Debug\\cmTC_d8cdc.exe" /INCREMENTAL /ILK:"cmTC_d8cdc.dir\\Debug\\cmTC_d8cdc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-drypoh/Debug/cmTC_d8cdc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-drypoh/Debug/cmTC_d8cdc.lib" /MACHINE:X64  /machine:x64 cmTC_d8cdc.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_d8cdc.vcxproj -> C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-drypoh\\Debug\\cmTC_d8cdc.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7bmcim\\Debug\\cmTC_f107a.exe" /INCREMENTAL /ILK:"cmTC_f107a.dir\\Debug\\cmTC_f107a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-7bmcim/Debug/cmTC_f107a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-7bmcim/Debug/cmTC_f107a.lib" /MACHINE:X64  /machine:x64 cmTC_f107a.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_f107a.vcxproj -> C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7bmcim\\Debug\\cmTC_f107a.exe
         FinalizeBuildStatus:
-          Se eliminar├í el archivo "cmTC_d8cdc.dir\\Debug\\cmTC_d8cdc.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_d8cdc.dir\\Debug\\cmTC_d8cdc.tlog\\cmTC_d8cdc.lastbuildstate".
-        Compilaci├│n del proyecto terminada "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-drypoh\\cmTC_d8cdc.vcxproj" (destinos predeterminados).
+          Se eliminar├í el archivo "cmTC_f107a.dir\\Debug\\cmTC_f107a.tlog\\unsuccessfulbuild".
+          Aplicando tarea Touch a "cmTC_f107a.dir\\Debug\\cmTC_f107a.tlog\\cmTC_f107a.lastbuildstate".
+        Compilaci├│n del proyecto terminada "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7bmcim\\cmTC_f107a.vcxproj" (destinos predeterminados).
         
         Compilaci├│n correcta.
             0 Advertencia(s)
             0 Errores
         
-        Tiempo transcurrido 00:00:00.50
+        Tiempo transcurrido 00:00:00.45
         
       exitCode: 0
   -
@@ -210,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-hf1byq"
-      binary: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-hf1byq"
+      source: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-3u2d5k"
+      binary: "C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-3u2d5k"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -221,40 +221,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-hf1byq'
+        Change Dir: 'C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-3u2d5k'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9a190.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c4074.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.10+8b8e13593 para .NET Framework
-        Compilaci├│n iniciada a las 12/06/2025 10:16:54.
+        Compilaci├│n iniciada a las 12/06/2025 15:01:53.
         
-        Proyecto "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hf1byq\\cmTC_9a190.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3u2d5k\\cmTC_c4074.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
-          Creando directorio "cmTC_9a190.dir\\Debug\\".
+          Creando directorio "cmTC_c4074.dir\\Debug\\".
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hf1byq\\Debug\\".
-          Creando directorio "cmTC_9a190.dir\\Debug\\cmTC_9a190.tlog\\".
+          Creando directorio "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3u2d5k\\Debug\\".
+          Creando directorio "cmTC_c4074.dir\\Debug\\cmTC_c4074.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_9a190.dir\\Debug\\cmTC_9a190.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_9a190.dir\\Debug\\cmTC_9a190.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_c4074.dir\\Debug\\cmTC_c4074.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_c4074.dir\\Debug\\cmTC_c4074.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9a190.dir\\Debug\\\\" /Fd"cmTC_9a190.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4074.dir\\Debug\\\\" /Fd"cmTC_c4074.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35208 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9a190.dir\\Debug\\\\" /Fd"cmTC_9a190.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4074.dir\\Debug\\\\" /Fd"cmTC_c4074.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hf1byq\\Debug\\cmTC_9a190.exe" /INCREMENTAL /ILK:"cmTC_9a190.dir\\Debug\\cmTC_9a190.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-hf1byq/Debug/cmTC_9a190.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-hf1byq/Debug/cmTC_9a190.lib" /MACHINE:X64  /machine:x64 cmTC_9a190.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_9a190.vcxproj -> C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hf1byq\\Debug\\cmTC_9a190.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3u2d5k\\Debug\\cmTC_c4074.exe" /INCREMENTAL /ILK:"cmTC_c4074.dir\\Debug\\cmTC_c4074.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-3u2d5k/Debug/cmTC_c4074.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/CMakeScratch/TryCompile-3u2d5k/Debug/cmTC_c4074.lib" /MACHINE:X64  /machine:x64 cmTC_c4074.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_c4074.vcxproj -> C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3u2d5k\\Debug\\cmTC_c4074.exe
         FinalizeBuildStatus:
-          Se eliminar├í el archivo "cmTC_9a190.dir\\Debug\\cmTC_9a190.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_9a190.dir\\Debug\\cmTC_9a190.tlog\\cmTC_9a190.lastbuildstate".
-        Compilaci├│n del proyecto terminada "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hf1byq\\cmTC_9a190.vcxproj" (destinos predeterminados).
+          Se eliminar├í el archivo "cmTC_c4074.dir\\Debug\\cmTC_c4074.tlog\\unsuccessfulbuild".
+          Aplicando tarea Touch a "cmTC_c4074.dir\\Debug\\cmTC_c4074.tlog\\cmTC_c4074.lastbuildstate".
+        Compilaci├│n del proyecto terminada "C:\\Users\\ajlorenzo\\Documents\\vsc\\gstreamer_send_camera\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3u2d5k\\cmTC_c4074.vcxproj" (destinos predeterminados).
         
         Compilaci├│n correcta.
             0 Advertencia(s)
             0 Errores
         
-        Tiempo transcurrido 00:00:00.49
+        Tiempo transcurrido 00:00:00.48
         
       exitCode: 0
   -
