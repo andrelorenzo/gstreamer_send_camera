@@ -4,9 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/include",
-                 "C:/GStreamer/1.0/msvc_x86_64",
-                "C:/GStreamer/1.0/msvc_x86_64/include/gstreamer-1.0"
+                "C:/GStreamer/1.0/msvc_x86_64",
+                "C:/GStreamer/1.0/msvc_x86_64/include/",
+                "C:/GStreamer/1.0/msvc_x86_64/include/gstreamer-1.0/gst/"
 
             ],
             "defines": [
@@ -16,7 +16,7 @@
             "compilerPath": "cl.exe",
             "cStandard": "c23",
             "cppStandard": "c++23",
-            "intelliSenseMode": "msvc-x64"
+            "intelliSenseMode": "${default}"
         }
     ],
     "version": 4

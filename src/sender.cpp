@@ -1,8 +1,7 @@
-// emisor_rtsp.cpp
-#include <gst/gst.h>
-#include <gst/rtsp/rtsp.h>
-#include <gst/rtsp-server/rtsp-client.h>
-#include <gst/rtsp-server/rtsp-server.h>
+#include <gst.h>
+#include <rtsp/rtsp.h>
+#include <rtsp-server/rtsp-client.h>
+#include <rtsp-server/rtsp-server.h>
 #include <string>
 #include <iostream>
 
