@@ -5,11 +5,25 @@
 #include <string>
 #include <iostream>
 
-
+extern "C" {
+    GST_PLUGIN_STATIC_DECLARE(coreelements);
+    GST_PLUGIN_STATIC_DECLARE(app);
+    GST_PLUGIN_STATIC_DECLARE(rtp);
+    GST_PLUGIN_STATIC_DECLARE(rtsp);
+    GST_PLUGIN_STATIC_DECLARE(jpeg);
+    // GST_PLUGIN_STATIC_DECLARE(videoconvert);
+    GST_PLUGIN_STATIC_DECLARE(soup);
+}
 
 int main(int argc, char **argv) {
     gst_init(&argc, &argv);
-
+    GST_PLUGIN_STATIC_REGISTER(coreelements);
+    GST_PLUGIN_STATIC_REGISTER(app);
+    GST_PLUGIN_STATIC_REGISTER(rtp);
+    GST_PLUGIN_STATIC_REGISTER(rtsp);
+    GST_PLUGIN_STATIC_REGISTER(jpeg);
+    // GST_PLUGIN_STATIC_REGISTER(videoconvert);
+    GST_PLUGIN_STATIC_REGISTER(soup);
     std::string ip = "192.168.1.15";
     
     if (argc < 2) {
