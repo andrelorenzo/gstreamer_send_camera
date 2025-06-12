@@ -1,0 +1,5 @@
+C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/sender.dir
+C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/multiplexer.dir
+C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/receiver.dir
+C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/ajlorenzo/Documents/vsc/gstreamer_send_camera/build/CMakeFiles/ZERO_CHECK.dir

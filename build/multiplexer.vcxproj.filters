@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\ajlorenzo\Documents\vsc\gstreamer_send_camera\src\multiplexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ajlorenzo\Documents\vsc\gstreamer_send_camera\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AFF8E605-2597-30C7-B9C2-813D14A4FAE2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
