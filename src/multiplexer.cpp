@@ -9,7 +9,18 @@
 #pragma comment(lib, "iphlpapi.lib")
 #pragma comment(lib, "ws2_32.lib")
 
-
+static void on_client_connected(GstRTSPServer *server, GstRTSPClient *client, gpointer user_data) {
+    GstRTSPConnection *conn = gst_rtsp_client_get_connection(client);
+    if (conn) {
+        const gchar *ip = gst_rtsp_connection_get_ip(conn);
+        if (ip)
+            g_print("[Cliente] conectado desde IP: %s\n", ip);
+        else
+            g_print("[Cliente] conectado (IP no disponible)\n");
+    } else {
+        g_print("[Cliente] No conectado (no se pudo obtener conexión)\n");
+    }
+}
 // #define nob_shift(xs, xs_sz) (NOB_ASSERT((xs_sz) > 0), (xs_sz)--, *(xs)++)
 bool detectar_ips_redes_privadas(std::string &ip1, std::string &ip2) {
     ULONG bufferSize = 15000;
@@ -30,13 +41,11 @@ bool detectar_ips_redes_privadas(std::string &ip1, std::string &ip2) {
             char strbuf[INET_ADDRSTRLEN];
             inet_ntop(AF_INET, &(sa_in->sin_addr), strbuf, INET_ADDRSTRLEN);
             std::string ip = strbuf;
-            if (ip.rfind("192.168.", 0) == 0) {
-                ips_detectadas.push_back(ip);
-            }
+            ips_detectadas.push_back(ip);
         }
     }
 
-    if (ips_detectadas.size() >= 2) {
+    if (ips_detectadas.size() == 2) {
         ip1 = ips_detectadas[0];
         ip2 = ips_detectadas[1];
         return true;
@@ -67,6 +76,7 @@ static void on_media_configure(GstRTSPMediaFactory *factory, GstRTSPMedia *media
 // Funcion para crear un servidor RTSP en una IP concreta
 GstRTSPServer* crear_servidor(const std::string& ip, const std::string& pipeline) {
     auto *server = gst_rtsp_server_new();
+    g_signal_connect(server, "client-connected", G_CALLBACK(on_client_connected), nullptr);
     gst_rtsp_server_set_address(server, ip.c_str());
     gst_rtsp_server_set_service(server, "8554");
 
@@ -92,52 +102,11 @@ int main(int argc, char **argv) {
     gst_init(&argc, &argv);
 
     std::string cam_url = "rtsp://admin:admin123@192.168.0.10:554/live0.265";
-    // std::string ip_eth0 = "192.168.0.15";
-    // std::string ip_eth1 = "192.168.1.15";
 
-    // if(argc < 4 && argc > 1){
-    //     printf("Usage:\n\t <ip-camera> <ip-interfaz-1> <ip-interfaz-2> \n");
-    //     return -1;
-    // }else if (argc == 4){
-    //     cam_url = std::string(argv[1]);
-    //     ip_eth0 = std::string(argv[2]);
-    //     ip_eth1 = std::string(argv[3]);
-    // }else{ // lanzar .exe
-    //     printf("Introduzca la direccion de entrada RTSP (rtsp://admin:admin123@192.168.0.10:554/live0.265): \nSi se introduce \"def\" se cogera la .1.15, .0.15 y rtsp://admin:admin123@192.168.0.10:554/live0.265\n\t->Path: ");
-    //     std::cin >> cam_url;
-    //     if(cam_url.starts_with("def")){
-    //         cam_url = "rtsp://admin:admin123@192.168.0.10:554/live0.265";
-    //         ip_eth0 = "192.168.0.20";
-    //         ip_eth1 = "192.168.1.122";
-    //         goto ok;
-    //     }
-    //     while(!cam_url.starts_with("rtsp://")){
-    //         std::cout << "\x1B[2J\x1B[H";
-    //         printf("Error en el formato, introduce una direccion valida\n\t ->path: ");
-    //         std::cin >> cam_url;
-    //     }
-
-    //     printf("Introduzca la direccion IP en la red A\n\t ->IP:  ");
-    //     std::cin >> ip_eth0;
-    //     while(!ip_eth0.starts_with("192.168.")){
-    //         std::cout << "\x1B[2J\x1B[H";
-    //         printf("Error en el formato, introduce una IP valida\n\t ->IP: ");
-    //         std::cin >> ip_eth0;
-    //     }
-        
-    //     printf("Introduzca la direccion IP en la red B\n\t ->IP:  ");
-    //     std::cin >> ip_eth1;
-    //     while(!ip_eth1.starts_with("192.168.")){
-    //         std::cout << "\x1B[2J\x1B[H";
-    //         printf("Error en el formato, introduce una IP valida\n\t ->IP: ");
-    //         std::cin >> ip_eth1;
-    //     }
-        
-    // }
-    // ok:
     std::string ip_eth0, ip_eth1;
     if (!detectar_ips_redes_privadas(ip_eth0, ip_eth1)) {
-        std::cerr << "No se pudieron detectar al menos dos interfaces activas en redes 192.168.x.x\n";
+        std::cerr << "Se han detectado menos o más de 2 interfaces de red en este dispositivo\n";
+        std::cerr << "El dispositivo debe estar conectado SOLO a 2 interfaces red distintas\n";
         return -1;
     }
     std::string pipeline =
@@ -159,7 +128,8 @@ int main(int argc, char **argv) {
     std::cout << "\trtsp://" << ip_eth0 << ":8554/stream\n";
     std::cout << "\trtsp://" << ip_eth1 << ":8554/stream\n";
     std::cout << "[Servidor] capturando stream de video desde: \n\t";
-    std::cout << cam_url;
+    std::cout << cam_url << std::endl << std::endl;
+    std::cout << "[Servidor] Puerto: 8554 y codec/decodec: 265" << std::endl;
     GMainLoop *loop = g_main_loop_new(nullptr, FALSE);
     g_main_loop_run(loop);
     return 0;
