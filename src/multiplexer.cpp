@@ -41,11 +41,15 @@ bool detectar_ips_redes_privadas(std::string &ip1, std::string &ip2) {
             char strbuf[INET_ADDRSTRLEN];
             inet_ntop(AF_INET, &(sa_in->sin_addr), strbuf, INET_ADDRSTRLEN);
             std::string ip = strbuf;
-            ips_detectadas.push_back(ip);
+            if (ip.rfind("127.0.0", 0) != 0) {
+                printf("Interfaz detectada: %s\n",ip.c_str());
+                ips_detectadas.push_back(ip);
+            }
         }
+        
     }
 
-    if (ips_detectadas.size() == 2) {
+    if (ips_detectadas.size() >= 2) {
         ip1 = ips_detectadas[0];
         ip2 = ips_detectadas[1];
         return true;
