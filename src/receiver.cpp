@@ -12,11 +12,11 @@ int main(int argc, char **argv) {
     gst_init(&argc, &argv);
 
     std::string ip = "";
-    std::string pipe_str = "rtspsrc location=rtsp://" + ip + ":8554/stream latency=100 ! rtph265depay ! avdec_h265 ! autovideosink";
     
     printf("Introduzca la direccion IP de recepcion\n\t ->IP:  ");
     std::cin >> ip;
     std::cout << "IP introducida: "<< ip << std::endl;
+    std::string pipe_str = "rtspsrc location=rtsp://" + ip + ":8554/stream latency=100 ! rtph265depay ! avdec_h265 ! autovideosink";
 
     GstElement* pipe = nullptr;
     GError* error = nullptr;
